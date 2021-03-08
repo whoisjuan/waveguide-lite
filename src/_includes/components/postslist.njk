@@ -1,4 +1,4 @@
-{% for post in postslist | reverse %}
+{% for post in postslist | sortById %}
 
 {% if post.data.field_bgThumbPosition == "center center" %}
 {% set position = "center" %}

@@ -20,6 +20,8 @@ eleventyConfig.addPlugin(eleventyNavigationPlugin);
       }).toFormat('yy-MM-dd');
     });
 
+    eleventyConfig.addFilter("sortById", sortByOrder);
+
     eleventyConfig.addFilter('getYear', (dateString) => {
       return dateString.substring(0,4);
     });
@@ -32,9 +34,16 @@ eleventyConfig.addPlugin(eleventyNavigationPlugin);
     return DateTime.fromJSDate(dateObj, {
       zone: 'utc'
     }).toFormat("YYYY");
+    
   });
 
   return {
     dir: { input: 'src', output: '_site' }
   };
 };
+
+
+function sortByOrder(values) {
+  let vals = [...values];     // this *seems* to prevent collection mutation...
+  return vals.sort((a, b) => Math.sign(a.data.id - b.data.id));
+}
