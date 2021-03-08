@@ -49,7 +49,8 @@ layout: layouts/base.njk
       {% if field_gif == "1" %}
         <div class="mt-10" style='position:relative; padding-bottom:calc(61.68% + 44px)'><iframe src='https://gfycat.com/ifr/{{field_gfycatSource}}' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
       {% elif field_gif == "0" %}
-        <div class="mt-10"><img src="{{field_imagePathRaw}}" alt=""></div>
+      {% set path = field_imagePathRaw | getPath %}
+      <div class="mt-10"><img src="https://waveguide.gumlet.io/{{path}}?w=&h=700" alt=""></div>
       {% endif %}
     </div>
     <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">

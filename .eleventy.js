@@ -26,6 +26,10 @@ eleventyConfig.addPlugin(eleventyNavigationPlugin);
       return dateString.substring(0,4);
     });
 
+    eleventyConfig.addFilter('getPath', (url) => {
+      return url.substring(35);
+    });
+
     eleventyConfig.addFilter('oneFortyChar', (string) => {
       return string.substring(0,100) + "...";
     });
