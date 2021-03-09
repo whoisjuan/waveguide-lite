@@ -1,16 +1,6 @@
 ---
 layout: layouts/base.njk
 ---
-{# <h2 class="text-lg"> 🤔&nbsp;&nbsp;What is it?<h2>
-<div>{{ field_what | safe }}</div>
-<br>
-<h2 class="text-lg"> 🤲&nbsp;&nbsp;How does this interaction or solution work?<h2>
-<div>{{ field_howWorks | safe }}</div>
-<br>
-<h2 class="text-lg"> 🙌&nbsp;&nbsp;How does it help the user or improve the experience?<h2>
-<div>{{ field_howHelps | safe }}</div> #}
-
-
 <div class="relative py-16 bg-white overflow-hidden">
   <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
     <div class="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
@@ -41,7 +31,7 @@ layout: layouts/base.njk
     </div>
   </div>
   <div class="relative px-4 sm:px-6 lg:px-8">
-    <div class="text-lg max-w-prose mx-auto">
+    <div class="text-lg max-w-prose mx-auto flex flex-col items-center">
       <h1>
         <span class="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">{{field_patternSrc}}</span>
         <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{ title | safe }}</span>
@@ -50,7 +40,7 @@ layout: layouts/base.njk
         <div class="mt-10" style='position:relative; padding-bottom:calc(61.68% + 44px)'><iframe src='https://gfycat.com/ifr/{{field_gfycatSource}}' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
       {% elif field_gif == "0" %}
       {% set path = field_imagePathRaw | getPath %}
-      <div class="mt-10"><img src="https://waveguide.gumlet.io/{{path}}?w=&h=700" alt=""></div>
+        <div class="mt-10"><img src="https://waveguide.gumlet.io/{{path}}?w=&h=700" alt=""></div>
       {% endif %}
     </div>
     <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">

@@ -20,14 +20,26 @@
 {% set position = "bottom" %}
 {% endif %}
 
-<div class="flex flex-col rounded-lg shadow-lg overflow-hidden m-5">
+<div class="flex flex-col rounded-lg shadow-lg overflow-hidden m-5 relative">
   <div class="flex-shrink-0">
     {% if post.data.field_gif == "1" %}
       <a href="{{post.url}}"><img class="h-72 w-full object-cover object-{{position}}" src="https://thumbs.gfycat.com/{{post.data.field_gfycatSource}}-mobile.jpg" alt=""></a>
     {% else %}
       {% set path = post.data.field_imagePathRaw | getPath %}
-      <img class="h-72 w-full object-cover object-{{position}}" src="https://waveguide.gumlet.io/{{path}}?w=&h=500" alt="">
+      <a href="{{post.url}}"><img class="h-72 w-full object-cover object-{{position}}" src="https://waveguide.gumlet.io/{{path}}?w=&h=500" alt=""></a>
     {% endif %}
+    <div class="absolute top-2 right-3">
+      {% if "potentially dark" in post.data.field_categoriesRaw %}
+        <span class="shadow-xl inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-bold bg-red-500 text-white">
+          💀 &nbsp; Potentially Dark Pattern
+        </span>
+      {% endif %}
+      {% if post.data.field_gif == "1" %}
+        <span class="shadow-xl inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-bold bg-white text-gray-800">
+          GIF
+        </span>
+      {% endif %}
+    </div>
   </div>
   <div class="flex-1 bg-white p-6 flex flex-col justify-between">
     <div class="flex-1">
