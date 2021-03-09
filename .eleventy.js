@@ -5,9 +5,12 @@ module.exports = function(eleventyConfig) {
 
 eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // Copy `img/` to `_site/img`
+  // Copy `src/image` to `_site/image`
   eleventyConfig.addPassthroughCopy("src/image");
   eleventyConfig.addPassthroughCopy('admin')
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
+  });
 
   const {
     DateTime

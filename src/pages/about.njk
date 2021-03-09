@@ -6,9 +6,14 @@ eleventyNavigation:
   key: About
   order: 1
 ---
+{# {% block title %}It does work{% endblock %}
 
-
-
-<p >Your awesome content goes here.</p>
-
-<img class="mt-16" src="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif" alt="">
+{% block content %}
+  <div class="fixed inset-0 flex justify-center items-center">
+    <div>
+      <span class="text-change">Good design</span><br/>
+      <span class="change">is<br/>as little design<br/>as possible</span><br/>
+      <span x-data="{message:'🤖 Hello World 🤓'}" x-text="message"></span>
+    </div>
+  </div>
+{% endblock %} #}
