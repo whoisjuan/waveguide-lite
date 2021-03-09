@@ -37,7 +37,8 @@ layout: layouts/base.njk
         <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{ title | safe }}</span>
       </h1>
       {% if field_gif == "1" %}
-        <div class="mt-10" style='position:relative; padding-bottom:calc(61.68% + 44px)'><iframe src='https://gfycat.com/ifr/{{field_gfycatSource}}' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+        {# <div class="mt-10" style='position:relative; padding-bottom:calc(61.68% + 44px)'><iframe src='https://gfycat.com/ifr/{{field_gfycatSource}}' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div> #}
+        <iframe class="mt-10" src='https://gfycat.com/ifr/{{field_gfycatSource}}' frameborder='0' scrolling='no' allowfullscreen width='640' height='649'></iframe>
       {% elif field_gif == "0" %}
       {% set path = field_imagePathRaw | getPath %}
         <div class="mt-10"><img src="https://waveguide.gumlet.io/{{path}}?w=&h=700" alt=""></div>
