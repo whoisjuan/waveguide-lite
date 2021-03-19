@@ -37,6 +37,12 @@ eleventyConfig.addPlugin(eleventyNavigationPlugin);
       return string.substring(0,100) + "...";
     });
 
+
+    eleventyConfig.addFilter('cleanAndSplit', (string) => {
+      let newString = string.replace(/\n/g, '');
+      return newString.split(",");
+    });
+
     eleventyConfig.addFilter("yearDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {
       zone: 'utc'

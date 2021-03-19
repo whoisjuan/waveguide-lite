@@ -1,0 +1,30 @@
+<div class="mt-10 mr-6">
+    <label id="listbox-label" class="block text-sm font-medium text-gray-700">
+    Platform / Medium
+    </label>
+    <div class="mt-2 sm:hidden">
+    <label for="tabs" class="sr-only">Select a tab</label>
+    <select x-model="selectedPlatform" id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+        <option @click.prevent="selectedPlatform = 'All'">All</option>
+        <option @click.prevent="selectedPlatform = 'iOS'" >iOS</option>
+        <option @click.prevent="selectedPlatform = 'Android'" selected="selected">Android</option>
+        <option @click.prevent="selectedPlatform = 'Else'">Else</option>
+    </select>
+    </div>
+    <div class="hidden sm:block">
+    <nav class="flex space-x-4 mt-2" aria-label="Tabs">
+        <a @click.prevent="selectedPlatform = 'All'" href="#" :class="{'bg-gray-200 text-gray-800': selectedPlatform === 'All', 'text-gray-600 hover:text-gray-800': selectedPlatform != 'All'}" class="px-3 py-2 font-medium text-sm rounded-md">
+        All
+        </a>
+        <a @click.prevent="selectedPlatform = 'iOS'" href="#" :class="{'bg-gray-200 text-gray-800': selectedPlatform === 'iOS', 'text-gray-600 hover:text-gray-800': selectedPlatform != 'iOS'}" class="px-3 py-2 font-medium text-sm rounded-md">
+        iOS
+        </a>
+        <!-- Current: "bg-gray-200 text-gray-800", Default: "text-gray-600 hover:text-gray-800" -->
+        <a @click.prevent="selectedPlatform = 'Android'" href="#" :class="{'bg-gray-200 text-gray-800': selectedPlatform === 'Android', 'text-gray-600 hover:text-gray-800': selectedPlatform != 'Android'}" class="px-3 py-2 font-medium text-sm rounded-md">
+        Android
+        <a @click.prevent="selectedPlatform = 'Else'" href="#" :class="{'bg-gray-200 text-gray-800': selectedPlatform === 'Else', 'text-gray-600 hover:text-gray-800': selectedPlatform != 'Else'}" class="px-3 py-2 font-medium text-sm rounded-md">
+        Others
+        </a>
+    </nav>
+    </div>
+</div>

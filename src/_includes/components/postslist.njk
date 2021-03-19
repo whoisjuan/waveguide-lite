@@ -20,7 +20,8 @@
 {% set position = "bottom" %}
 {% endif %}
 
-<div x-show="selectedPlatform === '{{post.data.field_platformRaw}}' || selectedPlatform === 'All'" class="flex flex-col rounded-lg shadow-lg overflow-hidden m-5 relative">
+{% set cleanCategories = post.data.field_categoriesRaw | cleanAndSplit %}
+<div x-show="(selectedPlatform === '{{post.data.field_platformRaw}}' || selectedPlatform === 'All') && ('{{cleanCategories}}'.includes(selectedCategory) || selectedCategory === 'All')" class="flex flex-col rounded-lg shadow-lg overflow-hidden m-5 relative">
   <div class="flex-shrink-0">
     {% if post.data.field_gif == "1" %}
       <a href="{{post.url}}"><img class="h-72 w-full object-cover object-{{position}}" src="https://thumbs.gfycat.com/{{post.data.field_gfycatSource}}-mobile.jpg" alt=""></a>
