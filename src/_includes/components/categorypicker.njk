@@ -40,7 +40,7 @@
 
           Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
         -->
-        {% for item in categories %}
+        {% for item in categories|reverse %}
         <li @click.prevent="selectedCategory = '{{item.title}}'" :class="{'text-white bg-indigo-600': selectedCategory == '{{item.title}}', 'text-gray-900': selectedCategory != '{{item.title}}'}" id="listbox-item-0" role="option" class="text-gray-900 cursor-default select-none relative py-2 pl-8 pr-4">
           <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
           <span class="font-normal block truncate">
