@@ -7,7 +7,8 @@ eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // Copy `src/image` to `_site/image`
   eleventyConfig.addPassthroughCopy("src/image");
-  eleventyConfig.addPassthroughCopy('admin')
+  eleventyConfig.addPassthroughCopy('admin');
+  eleventyConfig.addPassthroughCopy({ static: "/" })
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
   });
