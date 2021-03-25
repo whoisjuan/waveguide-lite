@@ -3,12 +3,12 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
 
-eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // Copy `src/image` to `_site/image`
   eleventyConfig.addPassthroughCopy("src/image");
   eleventyConfig.addPassthroughCopy('admin');
-  eleventyConfig.addPassthroughCopy({ "static": "/" })
+  eleventyConfig.addPassthroughCopy('src/_redirects');
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
   });
@@ -52,7 +52,8 @@ eleventyConfig.addPlugin(eleventyNavigationPlugin);
   });
 
   return {
-    dir: { input: 'src', output: '_site' }
+    dir: { input: 'src', output: '_site' },
+    passthroughFileCopy: true
   };
 };
 
