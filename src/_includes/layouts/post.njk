@@ -22,14 +22,6 @@ eleventyComputed:
         </defs>
         <rect width="404" height="384" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
       </svg>
-      <svg class="absolute bottom-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
-        <defs>
-          <pattern id="d3eb07ae-5182-43e6-857d-35c643af9034" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="404" height="384" fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)" />
-      </svg>
     </div>
   </div>
   <div class="relative px-4 sm:px-6 lg:px-8">
@@ -46,7 +38,7 @@ eleventyComputed:
         <div class="mt-10"><img src="https://waveguide.gumlet.io/{{path}}?w=&h=700" alt=""></div>
       {% endif %}
     </div>
-    <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+    <div class="mt-12 mb-12 prose prose-indigo prose-lg text-gray-500 mx-auto">
       <h2>✋ What is it?</h2>
       {{field_what | safe}}
       <h2>🤲 How does this interaction or solution work?</h2>
@@ -54,5 +46,13 @@ eleventyComputed:
       <h2>🙌 How does this interaction or solution work?</h2>
       {{field_howHelps | safe}}
     </div>
+    <hr>
+    <div class="mt-12">
+      <p class="max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4 text-center">
+        That's it! If you like the content, consider subscribing to Waveguide Next, a newsletter / blog where I share new examples and lessons on User Experience.
+      </p>
+      <div class="flex flex-col items-center mt-5"><iframe src="https://whoisjuan.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe></div>
+    </div>
   </div>
 </div>
+{% include "components/footer.njk" %}
