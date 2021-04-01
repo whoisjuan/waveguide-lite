@@ -17,7 +17,7 @@
   postDate: "2018-03-13 04:32:00"
   expiryDate: null
   contentId: "1265"
-  title: "Paswordless Login"
+  title: "Passwordless Login"
   field_allColorsComputed: null
   field_allColorsComputedIllustration: null
   field_allColorsComputedThumbnail: null

@@ -53,7 +53,7 @@
 /patterns/ios/entry/faded-map-layout /examples/entry/faded-map-layout
 /patterns/else/entry/refill-me /examples/entry/refill-me
 /patterns/web/entry/reactive-favicon /examples/entry/reactive-favicon
-/patterns/ios/entry/paswordless-login /examples/entry/paswordless-login
+/patterns/ios/entry/paswordless-login /examples/entry/passwordless-login
 /patterns/ios/entry/flashing-scrollbar /examples/entry/flashing-scrollbar
 /patterns/web/entry/threaded-compose /examples/entry/threaded-compose
 /patterns/ios/entry/share-screenshot /examples/entry/share-screenshot
